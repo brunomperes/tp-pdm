@@ -1,5 +1,6 @@
-# Partial crawls
-meetup/crawls/
+# Partial crawls and outputs
+crawler/meetup/crawls/
+crawler/meetup/groups.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
