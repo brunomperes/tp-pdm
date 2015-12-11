@@ -6,13 +6,16 @@ import json
 class GroupSpider(scrapy.Spider):
     name = "meetup"
     allowed_domains = ["api.meetup.com"]
+
+    MEETUP_API_KEY = ""
+
     start_urls = [
-        "https://api.meetup.com/2/groups?sign=true&key=366d5a17c19606646672623f7e1070&only=category.name,id,name&group_id=11521392"
+        "https://api.meetup.com/2/groups?sign=true&key=" + MEETUP_API_KEY + "&only=category.name,id,name&group_id=11521392"
     ]
     # AngularJS-BH is the seed group
-    base_profile_url = "https://api.meetup.com/2/profiles?sign=true&key=366d5a17c19606646672623f7e1070&only=group.id&member_id="
-    base_group_members_url = "https://api.meetup.com/2/profiles?sign=true&key=366d5a17c19606646672623f7e1070&only=member_id&group_id="
-    base_group_info_url = "https://api.meetup.com/2/groups?sign=true&key=366d5a17c19606646672623f7e1070&category.name,id,name&group_id="
+    base_profile_url = "https://api.meetup.com/2/profiles?sign=true&key=" + MEETUP_API_KEY + "&only=group.id&member_id="
+    base_group_members_url = "https://api.meetup.com/2/profiles?sign=true&key=" + MEETUP_API_KEY + "&only=member_id&group_id="
+    base_group_info_url = "https://api.meetup.com/2/groups?sign=true&key=" + MEETUP_API_KEY + "&category.name,id,name&group_id="
 
     DEBUG_MODE = True
 
