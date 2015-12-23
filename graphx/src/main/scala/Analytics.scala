@@ -29,7 +29,7 @@ import org.apache.spark.graphx.PartitionStrategy._
  * Executar o codigo:
  *    /bin/spark-submit --class "SimpleApp" --master local[4] /Users/laismota/Documents/UFMG/10s/PDM/proj-final/code/target/scala-2.10/simple-project_2.10-1.0.jar pagerank /Users/laismota/Documents/UFMG/10s/PDM/proj-final/data/edges50.txt --numEPart=1
  */
-object SimpleApp extends Logging {
+object MeetupAnalysis extends Logging {
 
   def main(args: Array[String]): Unit = {
     if (args.length < 2) {
@@ -41,8 +41,6 @@ object SimpleApp extends Logging {
       System.err.println("  triangles   Count the number of triangles")
       System.exit(1)
     }
-
-    println("Oi lais")
     
     val taskType = args(0)
     val fname = args(1)
