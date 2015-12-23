@@ -23,4 +23,10 @@ O arquivo com os dados de saida eh `groups.json`
 
 ## GraphX
 
-//TODO
+Com o spark instalado e o SBT (Simple Building Tool), baixe todas as dependencias e compile o codigo com:
+
+`sbt package`
+
+Em seguida, execute o código com o comando:
+
+`/caminho/para/spark/bin/spark-submit --class "MeetupAnalysis" --master local[4] target/scala-2.10/meetup-analysis-project_2.10-1.0.jar pagerank caminho/para/arquivo/entrada/data/edges50.txt --numEPart=1`
